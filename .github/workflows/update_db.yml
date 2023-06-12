@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
     # 允许在 github 网站上手动触发，这里啥也不用写好像
   
+  push:
+    # 推送时也触发一下
+    
   schedule:
     # cron: 'mm h d m d' # 分时日月周
     - cron: '16 0 * * 5' # 东八区 周五 早八点十六
@@ -20,4 +23,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: node update_db.js
+      
+      - name: gogogo
+        run: |
+          npm install -g coffeescript
+          npm install
+          coffee update_db.coffee

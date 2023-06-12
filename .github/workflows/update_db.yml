@@ -1,5 +1,14 @@
 name: update_db
-on: []
+on:
+  schedule:
+    # cron: 'mm h d m d' # 分时日月周
+    - cron: '16 0 * * 5' # 东八区 周五 早八点十六
+    - cron: '28 0 * * 5'
+    - cron: '38 0 * * 5'
+    - cron: '50 0 * * 5'
+    - cron: '55 0 * * 5'
+    - cron: '58 0 * * 5'
+    - cron: '00 1 * * 5'
 jobs:
   job_update_db:
     runs-on: ubuntu-22.04

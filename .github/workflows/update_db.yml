@@ -1,5 +1,8 @@
 name: update_db
 on:
+  workflow_dispatch:
+    # 允许在 github 网站上手动触发，这里啥也不用写好像
+  
   schedule:
     # cron: 'mm h d m d' # 分时日月周
     - cron: '16 0 * * 5' # 东八区 周五 早八点十六
